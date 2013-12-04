@@ -115,7 +115,7 @@
                     <name>${project.build.finalName}</name> 
                 </configuration> 
                 <!-- 
-               <executions> 
+                <executions> 
                   <execution> 
                      <phase>install</phase> 
                        <goals> 
