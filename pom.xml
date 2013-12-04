@@ -38,11 +38,11 @@
             <artifactId>primefaces</artifactId>  
             <version>4.0</version>  
         </dependency> 
-<dependency>  
-    <groupId>org.primefaces.themes</groupId>  
-    <artifactId>all-themes</artifactId>  
-    <version>1.0.10</version>  
-</dependency> 
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>all-themes</artifactId>  
+            <version>1.0.10</version>  
+        </dependency> 
     </dependencies>
     <repositories>
         <repository>  
@@ -99,41 +99,67 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin> 
+                <groupId>com.oracle.weblogic</groupId> 
+                <artifactId>weblogic-maven-plugin</artifactId> 
+                <version>12.1.1.0</version> 
+                <configuration> 
+                    <adminurl>t3://localhost:7001</adminurl>
+                    <user>weblogic</user> 
+                    <password>Adem9843</password> 
+                    <upload>true</upload> 
+                    <action>deploy</action> 
+                    <remote>false</remote> 
+                    <verbose>true</verbose> 
+                    <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source> 
+                    <name>${project.build.finalName}</name> 
+                </configuration> 
+                <!-- 
+               <executions> 
+                  <execution> 
+                     <phase>install</phase> 
+                       <goals> 
+                         <goal>deploy</goal> 
+                       </goals> 
+                  </execution> 
+                </executions> 
+                --> 
+            </plugin> 
         </plugins>
         <pluginManagement>
-        	<plugins>
-        		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-        		<plugin>
-        			<groupId>org.eclipse.m2e</groupId>
-        			<artifactId>lifecycle-mapping</artifactId>
-        			<version>1.0.0</version>
-        			<configuration>
-        				<lifecycleMappingMetadata>
-        					<pluginExecutions>
-        						<pluginExecution>
-        							<pluginExecutionFilter>
-        								<groupId>
-        									org.apache.maven.plugins
-        								</groupId>
-        								<artifactId>
-        									maven-dependency-plugin
-        								</artifactId>
-        								<versionRange>
-        									[2.6,)
-        								</versionRange>
-        								<goals>
-        									<goal>copy</goal>
-        								</goals>
-        							</pluginExecutionFilter>
-        							<action>
-        								<ignore></ignore>
-        							</action>
-        						</pluginExecution>
-        					</pluginExecutions>
-        				</lifecycleMappingMetadata>
-        			</configuration>
-        		</plugin>
-        	</plugins>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.apache.maven.plugins
+                                        </groupId>
+                                        <artifactId>
+                                            maven-dependency-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [2.6,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>copy</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
         </pluginManagement>
     </build>
 
