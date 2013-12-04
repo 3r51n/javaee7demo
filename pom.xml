@@ -110,20 +110,6 @@
                     <middlewareHome>C:\Oracle\Middleware\Oracle_Home\wlserver</middlewareHome>
                 </configuration>
                 <executions>
-                    <!-- Execute the appc goal during the package phase -->
-                    <execution>
-                        <id>wls-appc</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>appc</goal>
-                        </goals>
-                        <configuration>
-                            <source>${project.build.directory}/${project.name}.${project.packaging}</source>
-                        </configuration>
-                    </execution>
-                    <!-- Deploy the application to the WebLogic Server in the
-                         pre-integration-test phase
-                    -->
                     <execution>
                         <id>wls-deploy</id>
                         <phase>install</phase>
