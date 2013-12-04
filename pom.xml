@@ -99,39 +99,29 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <!-- This is the configuration for the
-                     weblogic-maven-plugin
-                -->
-                <groupId>com.oracle.weblogic</groupId>
-                <artifactId>weblogic-maven-plugin</artifactId>
-                <version>12.1.2-0-0</version>
+            <plugin> 
+                <groupId>com.oracle.weblogic</groupId> 
+                <artifactId>weblogic-maven-plugin</artifactId> 
+                <version>12.1.2-0-0</version> 
                 <configuration>
-                    <middlewareHome>C:\Oracle\Middleware\Oracle_Home\wlserver</middlewareHome>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>wls-deploy</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>deploy</goal>
+                    <adminurl>t3://127.0.0.1:7001</adminurl>
+                    <user>weblogic</user> 
+                    <password>Adem9843</password> 
+                    <upload>true</upload> 
+                    <action>deploy</action> 
+                    <remote>false</remote> 
+                    <verbose>true</verbose>
+                    <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source> 
+                    <name>JavaEE7Demo</name>
+                </configuration> 
+                <executions> 
+                    <execution> 
+                        <phase>install</phase> 
+                        <goals> 
+                            <goal>deploy</goal> 
                         </goals>
-                        <configuration>
-                            <!--The admin URL where the app is deployed. 
-                            Here use the plugin's default value t3://localhost:7001-->
-                            <adminurl>t3://127.0.0.1:7001</adminurl>
-                            <user>weblogic</user>
-                            <password>Adem9843</password>
-                            <!--The location of the file or directory to be deployed-->
-                            <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
-                            <!--The target servers where the application is deployed. 
-                            Here use the plugin's default value AdminServer-->
-                            <targets>AdminServer</targets>
-                            <verbose>true</verbose>
-                            <name>${project.build.finalName}</name>
-                        </configuration>
-                    </execution>
-                </executions>
+                    </execution> 
+                </executions> 
             </plugin>
         </plugins>
         <pluginManagement>
