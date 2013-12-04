@@ -114,7 +114,6 @@
                     <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source> 
                     <name>${project.build.finalName}</name> 
                 </configuration> 
-                <!-- 
                 <executions> 
                   <execution> 
                      <phase>install</phase> 
@@ -123,7 +122,6 @@
                        </goals> 
                   </execution> 
                 </executions> 
-                --> 
             </plugin> 
         </plugins>
         <pluginManagement>
