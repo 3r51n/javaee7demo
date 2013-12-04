@@ -102,7 +102,7 @@
             <plugin> 
                 <groupId>com.oracle.weblogic</groupId> 
                 <artifactId>weblogic-maven-plugin</artifactId> 
-                <version>12.1.2</version> 
+                <version>12.1.2.0</version> 
                 <configuration> 
                     <adminurl>t3://localhost:7001</adminurl>
                     <user>weblogic</user> 
