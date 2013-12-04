@@ -126,7 +126,7 @@
                     -->
                     <execution>
                         <id>wls-deploy</id>
-                        <phase>pre-integration-test</phase>
+                        <phase>install</phase>
                         <goals>
                             <goal>deploy</goal>
                         </goals>
@@ -142,20 +142,6 @@
                             Here use the plugin's default value AdminServer-->
                             <targets>AdminServer</targets>
                             <verbose>true</verbose>
-                            <name>${project.build.finalName}</name>
-                        </configuration>
-                    </execution>
-                    <!-- Stop the application in the pre-integration-test phase -->
-                    <execution>
-                        <id>wls-stop-app</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>stop-app</goal>
-                        </goals>
-                        <configuration>
-                            <adminurl>t3://127.0.0.1:7001</adminurl>
-                            <user>weblogic</user>
-                            <password>Adem9843</password>
                             <name>${project.build.finalName}</name>
                         </configuration>
                     </execution>
