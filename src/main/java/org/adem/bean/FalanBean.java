@@ -19,4 +19,8 @@ import javax.inject.Named;
 @Named(value = "falanBean")
 public class FalanBean implements Serializable{
     
+    public FalanBean(){
+        
+    }
+    
 }
