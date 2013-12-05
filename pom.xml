@@ -98,7 +98,7 @@
                     </execution>
                 </executions>
             </plugin>
-<plugin> 
+            <!--plugin> 
                 <groupId>com.oracle.weblogic</groupId> 
                 <artifactId>weblogic-maven-plugin</artifactId> 
                 <version>12.1.2</version> 
@@ -121,7 +121,7 @@
                         </goals>
                     </execution> 
                 </executions> 
-            </plugin>
+            </plugin-->
         </plugins>
         <pluginManagement>
             <plugins>
