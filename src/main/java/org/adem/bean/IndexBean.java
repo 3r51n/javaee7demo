@@ -22,9 +22,9 @@ import org.adem.service.PersonService;
  */
 @SessionScoped
 @Named(value = "indexBean")
-public class IndexBean implements Serializable{
+public class IndexBean implements Serializable {
 
-    @Inject
+    @Inject /*Person service import*/
     private PersonService personService;
     @Inject
     private FalanBean falanBean;
@@ -32,7 +32,7 @@ public class IndexBean implements Serializable{
     private Phone gsm = new Phone();
     private Phone ev = new Phone();
     
-    public IndexBean(){
+    public IndexBean() {
         
     }
     
